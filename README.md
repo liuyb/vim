@@ -1,4 +1,4 @@
 vim
 ===
 
-my vimdc
+my vimrc
