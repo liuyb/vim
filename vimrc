@@ -70,4 +70,15 @@ Bundle 'ctrlp.vim'
 
 Bundle 'dyng/ctrlsf.vim'
 
+"snipmate
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+let g:snippets_dir = "~/.vim/snippets"
+let g:snips_author = "weegc <weegc@163.com>"
+
+"Emmet
+Plugin 'mattn/emmet-vim'
+
 filetype plugin indent on     " required!   
