@@ -69,6 +69,8 @@ colorscheme Tomorrow-Night
 Bundle 'ctrlp.vim'
 
 Bundle 'dyng/ctrlsf.vim'
+" ack效率最好，但是安装有问题，暂时用ag搜索
+let g:ctrlsf_ackprg = 'ag'
 
 "snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
