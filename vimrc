@@ -9,8 +9,8 @@ if !filereadable(vundle_readme)
 endif
 
 syntax on
-set autoindent
-set cindent
+set smartindent
+set pastetoggle=<F9>
 set tabstop=4
 set shiftwidth=4
 set expandtab
