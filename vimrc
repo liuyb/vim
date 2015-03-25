@@ -21,6 +21,18 @@ set laststatus=2
 set noshowmode
 set scrolloff=30
 
+" 显示tab和空格
+set list
+" 设置tab和空格样式
+set lcs=tab:\|\ ,nbsp:%,trail:-
+" 设定行首tab为灰色
+highlight LeaderTab guifg=#666666
+" 匹配行首tab
+match LeaderTab /^\t/
+
+" 保存时自动删除多余空格
+autocmd BufWritePre * :%s/\s\+$//e
+
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white
 hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
 
@@ -31,11 +43,11 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " My Bundles here:  /* 插件配置格式 */
-"   
+"
 " original repos on github （Github网站上非vim-scripts仓库的插件，按下面格式填写）
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
@@ -53,7 +65,7 @@ map <F2> :NERDTreeToggle<CR>
 " Bundle 'FuzzyFinder'
 " non github repos   (非上面两种情况的，按下面格式填写)
 " Bundle 'git://git.wincent.com/command-t.git'
-" ... 
+" ...
 Plugin 'bling/vim-airline'
 let g:airline_theme = 'tomorrow'
 let g:bufferline_echo = 0
@@ -62,9 +74,9 @@ let g:airline_right_sep = '◀'
 Bundle 'ChrisKempson/Vim-Tomorrow-Theme'
 colorscheme Tomorrow-Night
 
-" Bundle 'VimIM' 
+" Bundle 'VimIM'
 " :let g:vimim_cloud = 'qq' "vim i vimim
-" :let g:vimim_toggle = 'pinyin,qq' 
+" :let g:vimim_toggle = 'pinyin,qq'
 
 Bundle 'ctrlp.vim'
 
@@ -83,4 +95,4 @@ let g:snips_author = "weegc <weegc@163.com>"
 "Emmet
 Plugin 'mattn/emmet-vim'
 
-filetype plugin indent on     " required!   
+filetype plugin indent on     " required!
