@@ -20,6 +20,10 @@ set t_Co=256
 set laststatus=2
 set noshowmode
 set scrolloff=30
+set mouse=a
+
+"使得注释换行时自动加上前导的空格和星号
+set formatoptions=tcqro
 
 " 显示tab和空格
 set list
@@ -32,6 +36,10 @@ match LeaderTab /^\t/
 
 " 保存时自动删除多余空格
 autocmd BufWritePre * :%s/\s\+$//e
+" 保存时自动将tab转换为空格
+autocmd BufWritePre * :%retab!
+
+autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js,*.jade set expandtab tabstop=2 shiftwidth=2
 
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white
 hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
@@ -94,5 +102,8 @@ let g:snips_author = "weegc <weegc@163.com>"
 
 "Emmet
 Plugin 'mattn/emmet-vim'
+
+"vim-jade
+Plugin 'digitaltoad/vim-jade'
 
 filetype plugin indent on     " required!
