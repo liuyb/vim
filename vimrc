@@ -10,7 +10,6 @@ endif
 
 syntax on
 set smartindent
-set pastetoggle=<F9>
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -87,6 +86,7 @@ colorscheme Tomorrow-Night
 " :let g:vimim_toggle = 'pinyin,qq'
 
 Bundle 'ctrlp.vim'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
 Bundle 'dyng/ctrlsf.vim'
 " ack效率最好，但是安装有问题，暂时用ag搜索
