@@ -20,6 +20,7 @@ set laststatus=2
 set noshowmode
 set scrolloff=30
 set mouse=a
+set pastetoggle=<F9>
 
 "使得注释换行时自动加上前导的空格和星号
 set formatoptions=tcqro
@@ -105,5 +106,11 @@ Plugin 'mattn/emmet-vim'
 
 "vim-jade
 Plugin 'digitaltoad/vim-jade'
+
+"less
+Bundle 'groenewege/vim-less'
+
+"Jquery
+Bundle 'jQuery'
 
 filetype plugin indent on     " required!
