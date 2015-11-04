@@ -87,6 +87,7 @@ colorscheme Tomorrow-Night
 " :let g:vimim_toggle = 'pinyin,qq'
 
 Bundle 'ctrlp.vim'
+let g:ctrlp_working_path_mode = 'a'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
 Bundle 'dyng/ctrlsf.vim'
