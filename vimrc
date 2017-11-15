@@ -59,6 +59,7 @@ match LeaderTab /^\t/
 
 " 保存时自动删除多余空格
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\r\+$//e
 " 保存时自动将tab转换为空格
 autocmd BufWritePre * :%retab!
 
