@@ -34,6 +34,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set nu
+set nonumber
 set cursorline
 set t_Co=256
 set laststatus=2
@@ -111,17 +112,18 @@ colorscheme Tomorrow-Night
 " :let g:vimim_toggle = 'pinyin,qq'
 
 Bundle 'ctrlp.vim'
-let g:ctrlp_working_path_mode = 'a'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+let g:ctrlp_working_path_mode = 'wa'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,tags
 nmap     <F5> <Plug>CtrlSFPrompt
 map     <F6> :CtrlSFToggle<CR>
 
 Bundle 'craigemery/vim-autotag'
-let g:autotagTagsFile=".tags"
+let g:autotagTagsFile="tags"
 
 Bundle 'dyng/ctrlsf.vim'
 " ack效率最好，但是安装有问题，暂时用ag搜索
 let g:ctrlsf_ackprg = 'ag'
+let g:ctrlsf_ignore_dir=['tags']
 
 "snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
