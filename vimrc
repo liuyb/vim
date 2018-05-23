@@ -1,23 +1,3 @@
-"function! DelTagOfFile(file)
-"  let fullpath = a:file
-"  let cwd = getcwd()
-"  let tagfilename = cwd . "/tags"
-"  let f = substitute(fullpath, cwd . "/", "", "")
-"  let f = escape(f, './')
-"  let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
-"  let resp = system(cmd)
-"endfunction
-"
-"function! UpdateTags()
-"  let f = expand("%:p")
-"  let cwd = getcwd()
-"  let tagfilename = cwd . "/tags"
-"  let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
-"  call DelTagOfFile(f)
-"  let resp = system(cmd)
-"endfunction
-"autocmd BufWritePost *.php call UpdateTags()
-
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
@@ -34,7 +14,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set nu
-set nonumber
 set cursorline
 set t_Co=256
 set laststatus=2
@@ -114,8 +93,7 @@ colorscheme Tomorrow-Night
 Bundle 'ctrlp.vim'
 let g:ctrlp_working_path_mode = 'wa'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,tags
-nmap     <F5> <Plug>CtrlSFPrompt
-map     <F6> :CtrlSFToggle<CR>
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 Bundle 'craigemery/vim-autotag'
 let g:autotagTagsFile="tags"
