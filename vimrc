@@ -102,6 +102,8 @@ Bundle 'dyng/ctrlsf.vim'
 " ack效率最好，但是安装有问题，暂时用ag搜索
 let g:ctrlsf_ackprg = 'ag'
 let g:ctrlsf_ignore_dir=['tags']
+nmap     <F5> <Plug>CtrlSFPrompt
+map     <F6> :CtrlSFToggle<CR>
 
 "snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
