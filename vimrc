@@ -9,6 +9,7 @@ if !filereadable(vundle_readme)
 endif
 
 syntax on
+set backspace=2
 set smartindent
 set tabstop=2
 set shiftwidth=2
@@ -44,6 +45,13 @@ autocmd BufWritePre * :%s/\r\+$//e
 autocmd BufWritePre * :%retab!
 
 autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js,*.jade set expandtab tabstop=2 shiftwidth=2
+
+"php funclist
+au FileType php call AddPHPFuncList()
+function AddPHPFuncList()
+    set dictionary-=~/.vim/php_funclist.txt dictionary+=~/.vim/php_funclist.txt
+    set complete-=k complete+=k
+endfunction
 
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white
 hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
@@ -138,6 +146,9 @@ let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退
 let Tlist_WinWidth = 32 "设置窗体宽度为32，可以根据自己喜好设置
 let Tlist_Ctags_Cmd ='ctags' "这里比较重要了，设置ctags的位置，不是指向MacOS自带的那个，而是我们用homebrew安装的那个
 map t :TlistToggle<CR>
+
+" YouCompleteMe
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on     " required!
 
