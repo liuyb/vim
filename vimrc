@@ -20,7 +20,7 @@ set t_Co=256
 set laststatus=2
 set noshowmode
 set scrolloff=30
-" set mouse=a
+set mouse=v
 set pastetoggle=<F9>
 
 "使得注释换行时自动加上前导的空格和星号
@@ -254,6 +254,10 @@ map     <F8> :LeaderfTag<CR>
 " easytag
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
+
+Plug 'janko-m/vim-test'
+
+Plug 'chemzqm/vim-run'
 
 call plug#end()
 
