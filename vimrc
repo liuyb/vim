@@ -113,12 +113,6 @@ let g:ctrlp_custom_ignore = {
   \ }
 "let g:ctrlp_user_command = 'find %s -type f'
 
-Bundle 'dyng/ctrlsf.vim'
-" ack效率最好，但是安装有问题，暂时用ag搜索
-let g:ctrlsf_ackprg = 'ag'
-let g:ctrlsf_ignore_dir=['tags']
-nmap     <F5> <Plug>CtrlSFPrompt
-map     <F6> :CtrlSFToggle<CR>
 
 "snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -254,6 +248,13 @@ map     <F8> :LeaderfTag<CR>
 " easytag
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
+
+" dyng/ctrl.vim
+Plug 'dyng/ctrlsf.vim'
+let g:ctrlsf_ackprg = 'ag'
+let g:ctrlsf_ignore_dir=['tags']
+nmap     <F5> <Plug>CtrlSFCwordExec
+nmap     <F6> :CtrlSFToggle<CR>
 
 call plug#end()
 
