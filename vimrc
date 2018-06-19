@@ -189,8 +189,16 @@ let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'Ξ'
 
-Plug 'chriskempson/vim-tomorrow-theme'
-colorscheme Tomorrow-Night
+Plug 'kaicataldo/material.vim'
+set rtp+=~/.vim/plugged/material.vim
+set background=dark
+colorscheme material
+if (has("termguicolors"))
+  set termguicolors
+endif
+let g:airline_theme = 'material'
+let g:material_terminal_italics = 1
+
 
 Plug 'mhinz/vim-startify'
 
