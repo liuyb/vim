@@ -106,8 +106,8 @@ let g:Lf_DefaultMode = 'FullPath'
 map     <F8> :LeaderfTag<CR>
 
 " easytag
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-easytags'
 
 " dyng/ctrl.vim
 Plug 'dyng/ctrlsf.vim'
