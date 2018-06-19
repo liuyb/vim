@@ -1,13 +1,3 @@
-let iCanHazVundle = 1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-  echo "Installing Vundle.."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-  let iCanHazVundle=0
-endif
-
 syntax on
 set backspace=2
 set smartindent
@@ -59,140 +49,11 @@ endfunction
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white
 hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
 
-set nocompatible               " be iMproved
-filetype off                   " required!       /**  从这行开始，vimrc配置 **/
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" My Bundles here:  /* 插件配置格式 */
-"
-" original repos on github （Github网站上非vim-scripts仓库的插件，按下面格式填写）
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'tpope/vim-rails.git'
-" vim-scripts repos  （vim-scripts仓库里的，按下面格式填写）
-Bundle 'The-NERD-tree'
-map <F2> :NERDTreeToggle<CR>
-" 开关文件浏览器
-" 在文件浏览器中定位当前文件
-" map <D-!> :NERDTreeFind <CR>
-" let NERDTreeQuitOnOpen = 1
-
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" non github repos   (非上面两种情况的，按下面格式填写)
-" Bundle 'git://git.wincent.com/command-t.git'
-" ...
-Plugin 'bling/vim-airline'
-" let g:airline_theme = 'tomorrow'
-let g:bufferline_echo = 0
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-Bundle 'ChrisKempson/Vim-Tomorrow-Theme'
-colorscheme Tomorrow-Night
-
-" Bundle 'VimIM'
-" :let g:vimim_cloud = 'qq' "vim i vimim
-" :let g:vimim_toggle = 'pinyin,qq'
-
-Bundle 'ctrlp.vim'
-map     <F4> :CtrlPTag<CR>
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*.git*
-"let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-"let g:ctrlp_user_command = 'find %s -type f'
-
-
-"snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
-let g:snippets_dir = "~/.vim/snippets"
-let g:snips_author = "liuyb <lauyb@vip.qq.com>"
-
-"Emmet
-Plugin 'mattn/emmet-vim'
-
-"vim-jade
-Plugin 'digitaltoad/vim-jade'
-
-"less
-Bundle 'groenewege/vim-less'
-
-"Jquery
-Bundle 'jQuery'
-
-" Taglist
-Bundle 'taglist.vim'
-
-" Settings for tagslist
-let Tlist_Use_Right_Window = 1 "让taglist窗口出现在Vim的右边
-let Tlist_File_Fold_Auto_Close = 1 "当同时显示多个文件中的tag时，设置为1，可使taglist只显示当前文件tag，其它文件的tag都被折叠起来。
-let Tlist_Show_One_File = 1 "只显示一个文件中的tag，默认为显示多个
-let Tlist_Sort_Type ='name' "Tag的排序规则，以名字排序。默认是以在文件中出现的顺序排序
-let Tlist_GainFocus_On_ToggleOpen = 1 "Taglist窗口打开时，立刻切换为有焦点状态
-let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退出vim
-let Tlist_WinWidth = 32 "设置窗体宽度为32，可以根据自己喜好设置
-let Tlist_Ctags_Cmd ='ctags' "这里比较重要了，设置ctags的位置，不是指向MacOS自带的那个，而是我们用homebrew安装的那个
-map t :TlistToggle<CR>
-
-" YouCompleteMe
-"Bundle 'Valloric/YouCompleteMe'
-
-" easymotion/vim-easymotion
-Plugin 'easymotion/vim-easymotion'
-
-let g:EasyMotion_do_mapping = 1 " Disable default mappings
-
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-" nmap s <Plug>(easymotion-overwin-f)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap <F3> <Plug>(easymotion-prefix)
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-
-Plugin 'chemzqm/wxapp.vim'
-
-Bundle 'yeaha/vim-phpfmt'
-let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 1) " format on save (autocmd)
-let g:phpfmt_php_path = "/usr/bin/php"               " Path to PHP
-"let g:phpfmt_prepasses_list = "AutoPreincrement,JointToImplode"
-"let g:phpfmt_passes_list = "ReturnNull"
-let g:phpfmt_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
-let g:phpfmt_indent_with_space = 2         " use spaces instead of tabs for indentation
-"let g:phpfmt_enable_auto_align = 1         " Enable auto align of = and =>
-"let g:phpfmt_visibility_order = 1          " Fixes visibiliy order for method in classes - PSR-2 4.2
-"let g:smart_linebreak_after_curly = 1      " Convert multistatement blocks into multiline blocks
-
-
-Plugin 'maksimr/vim-jsbeautify'
-autocmd BufWritePre *.js :call RangeJsBeautify()
-autocmd BufWritePre *.json :call RangeJsonBeautify()
-autocmd BufWritePre *.html :call RangeHtmlBeautify()
-autocmd BufWritePre *.css :call RangeCSSBeautify()
-
-filetype plugin indent on     " required!
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -258,6 +119,50 @@ nmap     <F6> :CtrlSFToggle<CR>
 
 Plug 'janko-m/vim-test'
 Plug 'chemzqm/vim-run'
+
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+map <F2> :NERDTreeToggle<CR>
+
+" easymotion/vim-easymotion
+Plug 'easymotion/vim-easymotion'
+
+let g:EasyMotion_do_mapping = 1 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+" nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap <F3> <Plug>(easymotion-prefix)
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+Plug 'chemzqm/wxapp.vim'
+
+Plug 'yeaha/vim-phpfmt'
+let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 1) " format on save (autocmd)
+let g:phpfmt_php_path = "/usr/bin/php"               " Path to PHP
+"let g:phpfmt_prepasses_list = "AutoPreincrement,JointToImplode"
+"let g:phpfmt_passes_list = "ReturnNull"
+let g:phpfmt_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+let g:phpfmt_indent_with_space = 2         " use spaces instead of tabs for indentation
+"let g:phpfmt_enable_auto_align = 1         " Enable auto align of = and =>
+"let g:phpfmt_visibility_order = 1          " Fixes visibiliy order for method in classes - PSR-2 4.2
+"let g:smart_linebreak_after_curly = 1      " Convert multistatement blocks into multiline blocks
+
+Plug 'maksimr/vim-jsbeautify'
+autocmd BufWritePre *.js :call RangeJsBeautify()
+autocmd BufWritePre *.json :call RangeJsonBeautify()
+autocmd BufWritePre *.html :call RangeHtmlBeautify()
+autocmd BufWritePre *.css :call RangeCSSBeautify()
 
 call plug#end()
 
