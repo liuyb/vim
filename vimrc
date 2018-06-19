@@ -204,5 +204,7 @@ Plug 'mhinz/vim-startify'
 Plug 'airblade/vim-gitgutter'
 autocmd BufWritePost * GitGutter
 
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
