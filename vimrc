@@ -1,3 +1,5 @@
+"自动语法高亮
+syntax enable
 syntax on
 set backspace=2
 set smartindent
@@ -12,6 +14,11 @@ set noshowmode
 set scrolloff=30
 set mouse=v
 set pastetoggle=<F9>
+
+" 侦测文件类型
+filetype on
+"打开对文件类型插件的支持
+filetype plugin on
 
 "使得注释换行时自动加上前导的空格和星号
 set formatoptions=tcqro
@@ -36,15 +43,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre * :%s/\r\+$//e
 " 保存时自动将tab转换为空格
 autocmd BufWritePre * :%retab!
-
-autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js,*.jade set expandtab tabstop=2 shiftwidth=2
-
-"php funclist
-au FileType php call AddPHPFuncList()
-function AddPHPFuncList()
-    set dictionary-=~/.vim/php_funclist.txt dictionary+=~/.vim/php_funclist.txt
-    set complete-=k complete+=k
-endfunction
 
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white
 hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
@@ -200,9 +198,10 @@ endif
 let g:airline_theme = 'material'
 let g:material_terminal_italics = 1
 
-
 Plug 'mhinz/vim-startify'
 
+Plug 'airblade/vim-gitgutter'
+autocmd BufWritePost * GitGutter
 
 call plug#end()
 
