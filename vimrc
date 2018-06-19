@@ -166,7 +166,7 @@ autocmd BufWritePre *.css :call RangeCSSBeautify()
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='molokai'
+
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -189,7 +189,11 @@ let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'Ξ'
 
+Plug 'chriskempson/vim-tomorrow-theme'
+colorscheme Tomorrow-Night
+
 Plug 'mhinz/vim-startify'
+
 
 call plug#end()
 
