@@ -102,6 +102,7 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 " LeaderF
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 let g:Lf_ShortcutF = '<F7>'
+let g:Lf_DefaultMode = 'FullPath'
 map     <F8> :LeaderfTag<CR>
 
 " easytag
