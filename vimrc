@@ -20,7 +20,7 @@ set formatoptions=tcqro
 set hlsearch
 
 " 复制自动到粘贴板
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " 显示tab和空格
 set list
