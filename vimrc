@@ -115,6 +115,7 @@ Plug 'dyng/ctrlsf.vim'
 let g:ctrlsf_ackprg = 'ag'
 let g:ctrlsf_ignore_dir=['tags']
 nmap     <F5> <Plug>CtrlSFCwordExec
+nmap     <F4> <Plug>CtrlSFPrompt
 nmap     <F6> :CtrlSFToggle<CR>
 
 Plug 'janko-m/vim-test'
