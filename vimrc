@@ -47,7 +47,7 @@ autocmd BufWritePre * :%retab!
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white
 hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
 
-nmap     <C-S-T> :bel term<CR>
+nmap <C-S-T> :bel term<CR>
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -119,7 +119,7 @@ nmap     <F4> <Plug>CtrlSFCwordExec
 nmap     <F5> <Plug>CtrlSFPrompt
 nmap     <F6> :CtrlSFToggle<CR>
 
-Plug 'janko-m/vim-test'
+"Plug 'janko-m/vim-test'
 Plug 'chemzqm/vim-run'
 
 Plug 'scrooloose/nerdtree'
@@ -161,10 +161,10 @@ let g:phpfmt_indent_with_space = 2         " use spaces instead of tabs for inde
 "let g:smart_linebreak_after_curly = 1      " Convert multistatement blocks into multiline blocks
 
 Plug 'maksimr/vim-jsbeautify'
-autocmd BufWritePre *.js :call RangeJsBeautify()
-autocmd BufWritePre *.json :call RangeJsonBeautify()
-autocmd BufWritePre *.html :call RangeHtmlBeautify()
-autocmd BufWritePre *.css :call RangeCSSBeautify()
+"autocmd BufWritePre *.js :call RangeJsBeautify()
+"autocmd BufWritePre *.json :call RangeJsonBeautify()
+"autocmd BufWritePre *.html :call RangeHtmlBeautify()
+"autocmd BufWritePre *.css :call RangeCSSBeautify()
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -178,15 +178,15 @@ let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
 let g:airline_symbols.crypt = '🔒'
 let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = ''
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.maxlinenr = '㏑'
 let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.paste = '∥'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'Ξ'
