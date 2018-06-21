@@ -49,6 +49,7 @@ hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
 
 nmap <C-S-T> :bel term<CR>
 
+
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -59,6 +60,9 @@ endif
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
+
+let mapleader = ";"
+nnoremap <Leader>w :w<CR>
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
@@ -168,6 +172,10 @@ Plug 'maksimr/vim-jsbeautify'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#show_buffers = 1
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -204,6 +212,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'ujihisa/neco-look'
 set rtp+=~/.vim/plugged/neco-look
+
+Plug 'terryma/vim-expand-region'
 
 call plug#end()
 
