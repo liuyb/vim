@@ -202,6 +202,8 @@ let g:airline_theme = 'material'
 let g:material_terminal_italics = 1
 
 Plug 'mhinz/vim-startify'
+let g:startify_change_to_dir = 0
+let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc', {'h': '/etc/hosts'} ]
 
 Plug 'airblade/vim-gitgutter'
 autocmd BufWritePost * GitGutter
