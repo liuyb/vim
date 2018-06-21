@@ -204,6 +204,7 @@ let g:material_terminal_italics = 1
 Plug 'mhinz/vim-startify'
 let g:startify_change_to_dir = 0
 let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc', {'h': '/etc/hosts'} ]
+let g:startify_change_to_vcs_root = 1
 
 Plug 'airblade/vim-gitgutter'
 autocmd BufWritePost * GitGutter
