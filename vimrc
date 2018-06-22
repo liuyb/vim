@@ -227,5 +227,7 @@ Plug 'terryma/vim-expand-region'
 
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'rizzatti/dash.vim'
+
 call plug#end()
 
