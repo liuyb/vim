@@ -61,7 +61,7 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-let mapleader = ";"
+let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 
 Plug 'Shougo/deoplete.nvim'
@@ -224,6 +224,8 @@ Plug 'ujihisa/neco-look'
 set rtp+=~/.vim/plugged/neco-look
 
 Plug 'terryma/vim-expand-region'
+
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
