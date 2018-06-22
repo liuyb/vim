@@ -47,8 +47,9 @@ autocmd BufWritePre * :%retab!
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white
 hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
 
-nmap <C-S-T> :bel term<CR>
-
+let mapleader = "\<Space>"
+nmap <leader>t :bel term<CR>
+nnoremap <Leader>w :w<CR>
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -61,8 +62,6 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-let mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR>
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
@@ -141,7 +140,6 @@ let g:EasyMotion_do_mapping = 1 " Disable default mappings
 " or
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-nmap <F3> <Plug>(easymotion-prefix)
 nmap s <Plug>(easymotion-overwin-f2)
 
 " Turn on case insensitive feature
