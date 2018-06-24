@@ -122,9 +122,6 @@ nmap     <F4> <Plug>CtrlSFCwordExec
 nmap     <F5> <Plug>CtrlSFPrompt
 nmap     <F6> :CtrlSFToggle<CR>
 
-"Plug 'janko-m/vim-test'
-Plug 'chemzqm/vim-run'
-
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 map <F2> :NERDTreeToggle<CR>
@@ -226,6 +223,8 @@ Plug 'terryma/vim-expand-region'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'rizzatti/dash.vim'
+
+Plug 'metakirby5/codi.vim'
 
 call plug#end()
 
