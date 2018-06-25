@@ -275,7 +275,7 @@ let g:airline_theme = 'material'
 
 " vim-startify
 let g:startify_change_to_dir = 0
-let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc', {'h': '/etc/hosts'} ]
+let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, '~/.zshrc', {'h': '/etc/hosts'} ]
 let g:startify_change_to_vcs_root = 1
 
 " phpfmt
@@ -301,3 +301,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 let g:material_terminal_italics = 1
+
+" easymotion Move to word
+nmap s <Plug>(easymotion-overwin-f2)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
