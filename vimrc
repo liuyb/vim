@@ -50,6 +50,7 @@ hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white
 let mapleader = "\<Space>"
 nmap <leader>t :bel term<CR>
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -116,7 +117,7 @@ map     <F8> :LeaderfTag<CR>
 
 " dyng/ctrl.vim
 Plug 'dyng/ctrlsf.vim'
-let g:ctrlsf_ackprg = 'ag'
+"let g:ctrlsf_ackprg = 'ag'
 let g:ctrlsf_ignore_dir=['tags']
 nmap     <F4> <Plug>CtrlSFCwordExec
 nmap     <F5> <Plug>CtrlSFPrompt
