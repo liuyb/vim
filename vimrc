@@ -10,7 +10,6 @@
 " Sections:
 "   - Common Settings
 "   - Extend Settings
-"   - Language Supports
 "   - Plugins
 "   - Key Mapping
 "   - Plugin Settings
@@ -94,13 +93,6 @@ autocmd BufWritePre * :%s/\r\+$//e
 autocmd BufWritePre * :%retab!
 
 " -------------------------------------------------
-" LANGUAGE SUPPORTS
-" -------------------------------------------------
-if filereadable(expand($HOME . '/.vimrc.language'))
-  source $HOME/.vimrc.language
-endif
-
-" -------------------------------------------------
 " PLUGINS
 " -------------------------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -137,51 +129,30 @@ Plug 'Shougo/deoplete.nvim'| Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim
 Plug 'dyng/ctrlsf.vim'            " 全文搜索
 Plug 'ujihisa/neco-look'          " 增加英文字典
 
-" Plugins for language
 " markdown
-if count(g:language_group, 'markdown')
-  Plug 'plasticboy/vim-markdown'                          " Markdown 代码高亮，自动格式化
-  Plug 'iamcco/markdown-preview.vim', {'for': 'markdown'} " Markdown 预览
-endif
+Plug 'plasticboy/vim-markdown'                          " Markdown 代码高亮，自动格式化
+Plug 'iamcco/markdown-preview.vim', {'for': 'markdown'} " Markdown 预览
 
 " html
-if count(g:language_group, 'html')
-  Plug 'docunext/closetag.vim' " 自动关闭 HTML 标签
-endif
+Plug 'docunext/closetag.vim' " 自动关闭 HTML 标签
 
 " css
-if count(g:language_group, 'css')
-  Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
-endif
+Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
 
 " js
-if count(g:language_group, 'js')
-  Plug 'pangloss/vim-javascript'
-endif
+Plug 'pangloss/vim-javascript'
 
 " json
-if count(g:language_group, 'json')
-  Plug 'elzr/vim-json' " json 语法检查
-endif
+Plug 'elzr/vim-json' " json 语法检查
 
 " php
-if count(g:language_group, 'php')
-  Plug 'yeaha/vim-phpfmt' " 格式化代码
-endif
+Plug 'yeaha/vim-phpfmt' " 格式化代码
 
 " python
-if count(g:language_group, 'python')
-  Plug 'hdima/python-syntax'
-endif
-
-" c
-if count(g:language_group, 'c')
-endif
+Plug 'hdima/python-syntax'
 
 " go
-if count(g:language_group, 'go')
-  Plug 'fatih/vim-go', { 'for': 'go' } " Golang
-endif
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 call plug#end()
 
@@ -232,21 +203,14 @@ nnoremap <C-F>t :CtrlSFToggle<CR>
 " -------------------------------------------------
 " PLUGIN SETTINGS
 " -------------------------------------------------
-" Language plugin settings
-if count(g:language_group, 'markdown')
-  let g:vim_markdown_new_list_item_indent = 2
-endif
+let g:vim_markdown_new_list_item_indent = 2
 
-if count(g:language_group, 'css')
-  augroup VimCSS3Syntax
-    autocmd!
-    autocmd FileType css setlocal iskeyword+=-
-  augroup END
-endif
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 
-if count(g:language_group, 'js')
-  let g:javascript_plugin_jsdoc = 1
-endif
+let g:javascript_plugin_jsdoc = 1
 
 " Startify Header
 let g:startify_custom_header=['Welcome ']
