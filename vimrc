@@ -193,6 +193,7 @@ command W w !sudo tee % > /dev/null
 
 " NERDTree
 nnoremap <C-E>     :NERDTreeToggle<CR>
+nnoremap <F2>     :NERDTreeToggle<CR>
 nnoremap <Leader>e :NERDTreeToggle<CR>
 
 " CtrlSF
