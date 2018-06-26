@@ -69,7 +69,7 @@ set nobackup              " 不生成临时文件
 set noswapfile            " 不生成 swap 文件
 set autoread              " 自动加载外部修改
 set autowrite             " 自动保存
-set confirm               " 弹出文件未保存确认
+"set confirm               " 弹出文件未保存确认
 
 set list                  " 显示tab和空格
 set lcs=tab:\|\ ,nbsp:%,trail:- " 设置tab和空格样式
@@ -107,22 +107,22 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'         " 启动页
-Plug 'gorodinskiy/vim-coloresque' " 颜色预览
-Plug 'jiangmiao/auto-pairs'       " 符号自动补全
-Plug 'tpope/vim-surround'         " 自动增加、替换配对符
-Plug 'chxuan/change-colorscheme'  " 配色切换
-Plug 'tomtom/tcomment_vim'        " 添加注释
-Plug 'tpope/vim-repeat'           " 增强 . 命令
+"Plug 'gorodinskiy/vim-coloresque' " 颜色预览
+"Plug 'jiangmiao/auto-pairs'       " 符号自动补全
+"Plug 'tpope/vim-surround'         " 自动增加、替换配对符
+"Plug 'chxuan/change-colorscheme'  " 配色切换
+"Plug 'tomtom/tcomment_vim'        " 添加注释
+"Plug 'tpope/vim-repeat'           " 增强 . 命令
 Plug 'terryma/vim-expand-region'  " 可视区域选择增强
 Plug 'rizzatti/dash.vim'          " Dash文档搜索
 Plug 'metakirby5/codi.vim'        " 直接运行代码
 Plug 'tpope/vim-fugitive'         " GIT命令增强
 Plug 'chemzqm/wxapp.vim'          " 微信小程序支持
 Plug 'easymotion/vim-easymotion'  " 快速移动
-Plug 'airblade/vim-gitgutter'     " GIT STATUS
+"Plug 'airblade/vim-gitgutter'     " GIT STATUS
 Plug 'kaicataldo/material.vim'    " material 配色
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 文件搜索
 Plug 'Shougo/deoplete.nvim'| Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim-rpc'
@@ -130,29 +130,29 @@ Plug 'dyng/ctrlsf.vim'            " 全文搜索
 Plug 'ujihisa/neco-look'          " 增加英文字典
 
 " markdown
-Plug 'plasticboy/vim-markdown'                          " Markdown 代码高亮，自动格式化
-Plug 'iamcco/markdown-preview.vim', {'for': 'markdown'} " Markdown 预览
+"Plug 'plasticboy/vim-markdown'                          " Markdown 代码高亮，自动格式化
+"Plug 'iamcco/markdown-preview.vim', {'for': 'markdown'} " Markdown 预览
 
 " html
-Plug 'docunext/closetag.vim' " 自动关闭 HTML 标签
+"Plug 'docunext/closetag.vim' " 自动关闭 HTML 标签
 
 " css
-Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
+"Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
 
 " js
-Plug 'pangloss/vim-javascript'
+"Plug 'pangloss/vim-javascript'
 
 " json
-Plug 'elzr/vim-json' " json 语法检查
+"Plug 'elzr/vim-json' " json 语法检查
 
 " php
 Plug 'yeaha/vim-phpfmt' " 格式化代码
 
 " python
-Plug 'hdima/python-syntax'
+"Plug 'hdima/python-syntax'
 
 " go
-Plug 'fatih/vim-go', { 'for': 'go' }
+"Plug 'fatih/vim-go', { 'for': 'go' }
 
 call plug#end()
 
