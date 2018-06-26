@@ -22,8 +22,10 @@
 " COMMON SETTINGS
 " -------------------------------------------------
 set      nocompatible
-syntax   on               " 开启语法高亮
+filetype on
 filetype plugin indent on
+syntax   on               " 开启语法高亮
+syntax   enable           " 开启语法高亮
 
 set nofoldenable          " 默认关闭代码折叠
 
@@ -126,6 +128,7 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 文件搜索
 Plug 'Shougo/deoplete.nvim'| Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'dyng/ctrlsf.vim'            " 全文搜索
 Plug 'ujihisa/neco-look'          " 增加英文字典
+Plug 'yeaha/vim-phpfmt'           " 格式化代码
 
 " markdown
 "Plug 'plasticboy/vim-markdown'                          " Markdown 代码高亮，自动格式化
@@ -144,7 +147,6 @@ Plug 'ujihisa/neco-look'          " 增加英文字典
 "Plug 'elzr/vim-json' " json 语法检查
 
 " php
-Plug 'yeaha/vim-phpfmt' " 格式化代码
 
 " python
 "Plug 'hdima/python-syntax'
