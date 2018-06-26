@@ -22,10 +22,8 @@
 " COMMON SETTINGS
 " -------------------------------------------------
 set      nocompatible
-filetype on
-filetype plugin on
 syntax   on               " 开启语法高亮
-syntax enable
+filetype plugin indent on
 
 set nofoldenable          " 默认关闭代码折叠
 
