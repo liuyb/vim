@@ -129,6 +129,7 @@ Plug 'Shougo/deoplete.nvim'| Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim
 Plug 'dyng/ctrlsf.vim'            " 全文搜索
 Plug 'ujihisa/neco-look'          " 增加英文字典
 Plug 'yeaha/vim-phpfmt'           " 格式化代码
+Plug 'ConradIrwin/vim-bracketed-paste'
 
 " markdown
 "Plug 'plasticboy/vim-markdown'                          " Markdown 代码高亮，自动格式化
@@ -204,14 +205,6 @@ nnoremap <C-F>t :CtrlSFToggle<CR>
 " -------------------------------------------------
 " PLUGIN SETTINGS
 " -------------------------------------------------
-let g:vim_markdown_new_list_item_indent = 2
-
-augroup VimCSS3Syntax
-  autocmd!
-  autocmd FileType css setlocal iskeyword+=-
-augroup END
-
-let g:javascript_plugin_jsdoc = 1
 
 " Startify Header
 let g:startify_custom_header=['Welcome ']
@@ -270,3 +263,6 @@ let g:material_terminal_italics = 1
 " easymotion Move to word
 nmap s <Plug>(easymotion-overwin-f2)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" Codi
+let g:codi#width = 100
