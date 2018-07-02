@@ -53,7 +53,7 @@ set t_Co=256              " 开启 256 色（若终端支持）
 set background=dark
 set nowrap                " 禁止折行
 
-set ignorecase            " 搜索忽略大小写    ic
+" set ignorecase            " 搜索忽略大小写    ic
 set incsearch             " 搜索时实时高亮    is
 set hlsearch              " 高亮所有搜索结果  hls
 
