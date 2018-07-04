@@ -137,6 +137,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 
 " html
 "Plug 'docunext/closetag.vim' " 自动关闭 HTML 标签
+Plug 'Chiel92/vim-autoformat'
 
 " css
 "Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
