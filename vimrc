@@ -111,17 +111,17 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'         " 启动页
 "Plug 'gorodinskiy/vim-coloresque' " 颜色预览
-"Plug 'jiangmiao/auto-pairs'       " 符号自动补全
+Plug 'jiangmiao/auto-pairs'       " 符号自动补全
 "Plug 'tpope/vim-surround'         " 自动增加、替换配对符
 "Plug 'chxuan/change-colorscheme'  " 配色切换
-"Plug 'tomtom/tcomment_vim'        " 添加注释
+Plug 'tomtom/tcomment_vim'        " 添加注释
 "Plug 'tpope/vim-repeat'           " 增强 . 命令
 Plug 'terryma/vim-expand-region'  " 可视区域选择增强
-Plug 'rizzatti/dash.vim'          " Dash文档搜索
+"Plug 'rizzatti/dash.vim'          " Dash文档搜索
 Plug 'metakirby5/codi.vim'        " 直接运行代码
 Plug 'tpope/vim-fugitive'         " GIT命令增强
 Plug 'chemzqm/wxapp.vim'          " 微信小程序支持
-Plug 'easymotion/vim-easymotion'  " 快速移动
+"Plug 'easymotion/vim-easymotion'  " 快速移动
 "Plug 'airblade/vim-gitgutter'     " GIT STATUS
 Plug 'kaicataldo/material.vim'    " material 配色
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 文件搜索
@@ -129,7 +129,12 @@ Plug 'Shougo/deoplete.nvim'| Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim
 Plug 'dyng/ctrlsf.vim'            " 全文搜索
 Plug 'ujihisa/neco-look'          " 增加英文字典
 Plug 'yeaha/vim-phpfmt'           " 格式化代码
-Plug 'ConradIrwin/vim-bracketed-paste'
+"Plug 'ConradIrwin/vim-bracketed-paste'
+"Plug 'wsdjeg/FlyGrep.vim'
+Plug 'jsfaint/gen_tags.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --all' }
 
 " markdown
 "Plug 'plasticboy/vim-markdown'                          " Markdown 代码高亮，自动格式化
@@ -266,3 +271,12 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " Codi
 let g:codi#width = 100
+
+" enable gtags module
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+" config project root markers.
+let g:gutentags_project_root = ['.root']
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+" forbid gutentags adding gtags databases
+let g:gutentags_auto_add_gtags_cscope = 0
