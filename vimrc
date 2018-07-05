@@ -111,8 +111,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'         " 启动页
 "Plug 'gorodinskiy/vim-coloresque' " 颜色预览
-Plug 'jiangmiao/auto-pairs'       " 符号自动补全
-"Plug 'tpope/vim-surround'         " 自动增加、替换配对符
+"Plug 'jiangmiao/auto-pairs'       " 符号自动补全
+Plug 'tpope/vim-surround'         " 自动增加、替换配对符
 "Plug 'chxuan/change-colorscheme'  " 配色切换
 Plug 'tomtom/tcomment_vim'        " 添加注释
 "Plug 'tpope/vim-repeat'           " 增强 . 命令
@@ -125,16 +125,19 @@ Plug 'chemzqm/wxapp.vim'          " 微信小程序支持
 "Plug 'airblade/vim-gitgutter'     " GIT STATUS
 Plug 'kaicataldo/material.vim'    " material 配色
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 文件搜索
-Plug 'Shougo/deoplete.nvim'| Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'Shougo/deoplete.nvim'| Plug 'roxma/nvim-yarp' | Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'dyng/ctrlsf.vim'            " 全文搜索
 Plug 'ujihisa/neco-look'          " 增加英文字典
 Plug 'yeaha/vim-phpfmt'           " 格式化代码
 "Plug 'ConradIrwin/vim-bracketed-paste'
 "Plug 'wsdjeg/FlyGrep.vim'
-Plug 'jsfaint/gen_tags.vim'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'skywind3000/gutentags_plus'
+"Plug 'jsfaint/gen_tags.vim'
+"Plug 'ludovicchabant/vim-gutentags'
+"Plug 'skywind3000/gutentags_plus'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --all' }
+"Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'roxma/nvim-completion-manager'
+"Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
 
 " markdown
 "Plug 'plasticboy/vim-markdown'                          " Markdown 代码高亮，自动格式化
