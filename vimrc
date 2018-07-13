@@ -121,7 +121,7 @@ Plug 'terryma/vim-expand-region'  " 可视区域选择增强
 Plug 'metakirby5/codi.vim'        " 直接运行代码
 Plug 'tpope/vim-fugitive'         " GIT命令增强
 Plug 'chemzqm/wxapp.vim'          " 微信小程序支持
-"Plug 'easymotion/vim-easymotion'  " 快速移动
+Plug 'easymotion/vim-easymotion'  " 快速移动
 "Plug 'airblade/vim-gitgutter'     " GIT STATUS
 Plug 'kaicataldo/material.vim'    " material 配色
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 文件搜索
@@ -246,7 +246,7 @@ let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, '~/.zshrc', {'h': '/etc/host
 let g:startify_change_to_vcs_root = 1
 
 " phpfmt
-let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 1) " format on save (autocmd)
+let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 0) " format on save (autocmd)
 let g:phpfmt_php_path = "/usr/bin/php"               " Path to PHP
 let g:phpfmt_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
 let g:phpfmt_indent_with_space = 2         " use spaces instead of tabs for indentation
@@ -284,3 +284,9 @@ let g:gutentags_project_root = ['.root']
 let g:gutentags_cache_dir = expand('~/.cache/tags')
 " forbid gutentags adding gtags databases
 let g:gutentags_auto_add_gtags_cscope = 0
+
+
+let g:ctrlsf_ignore_dir = ['tags', 'node_modules']
+
+
+
