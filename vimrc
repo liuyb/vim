@@ -56,6 +56,7 @@ set nowrap                " 禁止折行
 " set ignorecase            " 搜索忽略大小写    ic
 set incsearch             " 搜索时实时高亮    is
 set hlsearch              " 高亮所有搜索结果  hls
+set nowrapscan            " 禁用循环搜索
 
 set cursorcolumn          " 高亮当前列        cuc
 set cursorline            " 高亮当前行        cul
@@ -111,12 +112,12 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'         " 启动页
 "Plug 'gorodinskiy/vim-coloresque' " 颜色预览
-"Plug 'jiangmiao/auto-pairs'       " 符号自动补全
-Plug 'tpope/vim-surround'         " 自动增加、替换配对符
+Plug 'jiangmiao/auto-pairs'       " 符号自动补全
+"Plug 'tpope/vim-surround'         " 自动增加、替换配对符
 "Plug 'chxuan/change-colorscheme'  " 配色切换
-Plug 'tomtom/tcomment_vim'        " 添加注释
+"Plug 'tomtom/tcomment_vim'        " 添加注释
 "Plug 'tpope/vim-repeat'           " 增强 . 命令
-Plug 'terryma/vim-expand-region'  " 可视区域选择增强
+"Plug 'terryma/vim-expand-region'  " 可视区域选择增强
 "Plug 'rizzatti/dash.vim'          " Dash文档搜索
 Plug 'metakirby5/codi.vim'        " 直接运行代码
 Plug 'tpope/vim-fugitive'         " GIT命令增强
@@ -134,7 +135,7 @@ Plug 'yeaha/vim-phpfmt'           " 格式化代码
 "Plug 'jsfaint/gen_tags.vim'
 "Plug 'ludovicchabant/vim-gutentags'
 "Plug 'skywind3000/gutentags_plus'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --all' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --all' }
 "Plug 'roxma/vim-hug-neovim-rpc'
 "Plug 'roxma/nvim-completion-manager'
 "Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
@@ -200,6 +201,7 @@ imap <F9>  <Esc> :PreviousColorScheme<CR>
 
 " :W to save file by sudo
 command W w !sudo tee % > /dev/null
+vmap <C-C> "+yy
 
 " NERDTree
 nnoremap <C-E>     :NERDTreeToggle<CR>
@@ -246,7 +248,7 @@ let g:startify_bookmarks = [ {'c': '~/.vim/vimrc'}, '~/.zshrc', {'h': '/etc/host
 let g:startify_change_to_vcs_root = 1
 
 " phpfmt
-let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 0) " format on save (autocmd)
+let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 1) " format on save (autocmd)
 let g:phpfmt_php_path = "/usr/bin/php"               " Path to PHP
 let g:phpfmt_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
 let g:phpfmt_indent_with_space = 2         " use spaces instead of tabs for indentation
@@ -275,16 +277,6 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " Codi
 let g:codi#width = 100
-
-" enable gtags module
-let g:gutentags_modules = ['ctags', 'gtags_cscope']
-" config project root markers.
-let g:gutentags_project_root = ['.root']
-" generate datebases in my cache directory, prevent gtags files polluting my project
-let g:gutentags_cache_dir = expand('~/.cache/tags')
-" forbid gutentags adding gtags databases
-let g:gutentags_auto_add_gtags_cscope = 0
-
 
 let g:ctrlsf_ignore_dir = ['tags', 'node_modules']
 
