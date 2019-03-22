@@ -252,6 +252,8 @@ let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 1) " format on save (autocmd)
 let g:phpfmt_php_path = "/usr/bin/php"               " Path to PHP
 let g:phpfmt_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
 let g:phpfmt_indent_with_space = 2         " use spaces instead of tabs for indentation
+let g:phpfmt_visibility_order = 1          " Fixes visibiliy order for method in classes - PSR-2 4.2
+let g:smart_linebreak_after_curly = 1      " Convert multistatement blocks into multiline blocks
 
 " LeaderF
 let g:Lf_ShortcutF = '<Leader>f'
