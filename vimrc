@@ -21,6 +21,7 @@
 " -------------------------------------------------
 " COMMON SETTINGS
 " -------------------------------------------------
+"execute pathogen#infect()
 set      nocompatible
 filetype on
 filetype plugin indent on
@@ -130,6 +131,7 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " 文件搜索
 Plug 'dyng/ctrlsf.vim'            " 全文搜索
 Plug 'ujihisa/neco-look'          " 增加英文字典
 Plug 'yeaha/vim-phpfmt'           " 格式化代码
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 "Plug 'ConradIrwin/vim-bracketed-paste'
 "Plug 'wsdjeg/FlyGrep.vim'
 "Plug 'jsfaint/gen_tags.vim'
@@ -213,6 +215,8 @@ nmap     <C-F>g <Plug>CtrlSFCwordExec
 nmap     <C-F>f <Plug>CtrlSFPrompt
 nnoremap <C-F>t :CtrlSFToggle<CR>
 
+nmap <c-]> g<c-]>
+
 " -------------------------------------------------
 " PLUGIN SETTINGS
 " -------------------------------------------------
@@ -283,5 +287,15 @@ let g:codi#width = 100
 
 let g:ctrlsf_ignore_dir = ['tags', 'node_modules']
 
+let g:phpcd_php_cli_executable = '/usr/local/Cellar/php/7.2.10/bin/php'
 
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 0
+"let g:syntastic_auto_loc_list = 0
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_check_on_w = 0
 
