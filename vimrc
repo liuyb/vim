@@ -93,6 +93,7 @@ augroup end
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre * :%s/\r\+$//e
 autocmd BufWritePre * :%retab!
+autocmd BufWritePre *.vue :%!vue-formatter
 
 " -------------------------------------------------
 " PLUGINS
@@ -167,6 +168,18 @@ Plug 'Chiel92/vim-autoformat'
 " go
 "Plug 'fatih/vim-go', { 'for': 'go' }
 
+" markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+" Track the engine.
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+Plug 'sniphpets/sniphpets-doctrine'
+
+
 call plug#end()
 
 
@@ -217,6 +230,7 @@ nnoremap <C-F>t :CtrlSFToggle<CR>
 
 nmap <c-]> g<c-]>
 
+
 " -------------------------------------------------
 " PLUGIN SETTINGS
 " -------------------------------------------------
@@ -266,13 +280,12 @@ let g:Lf_DefaultMode = 'FullPath'
 map     <Leader>g :LeaderfTag<CR>
 
 " deoplete.
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_smart_case = 1
 
 colorscheme material
 set rtp+=~/.vim/plugged/material.vim
 set background=dark
-colorscheme material
 if (has("termguicolors"))
   set termguicolors
 endif
@@ -287,7 +300,7 @@ let g:codi#width = 100
 
 let g:ctrlsf_ignore_dir = ['tags', 'node_modules']
 
-let g:phpcd_php_cli_executable = '/usr/local/Cellar/php/7.2.10/bin/php'
+let g:phpcd_php_cli_executable = 'php'
 
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -299,3 +312,11 @@ let g:phpcd_php_cli_executable = '/usr/local/Cellar/php/7.2.10/bin/php'
 "let g:syntastic_check_on_wq = 0
 "let g:syntastic_check_on_w = 0
 
+" SirVer/ultisnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
