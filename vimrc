@@ -278,6 +278,7 @@ let g:phpfmt_enable_auto_align = 1         " Enable auto align of = and =>
 let g:Lf_ShortcutF = '<Leader>f'
 let g:Lf_DefaultMode = 'FullPath'
 map     <Leader>g :LeaderfTag<CR>
+let g:Lf_CommandMap = {'<C-K>': ['<Up>'], '<C-J>': ['<Down>']}
 
 " deoplete.
 "let g:deoplete#enable_at_startup = 1
